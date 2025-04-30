@@ -1,0 +1,63 @@
+site:
+  title: ThoughtSpot Documentation Preview Site
+  url: https://preview-thoughtspot.vercel.app
+  start_page: home::index.adoc
+content:
+  sources:
+  # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
+  - url: .
+    branches: HEAD
+    start_path: home
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    branches: ['9.8.0.sw', '10.1.0.sw']
+    start_path: software/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    branches: ['10.8.0.cl', '10.6.5.cl', '10.6.0.cl', '10.3.0.cl']
+    start_path: cloud/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Mobile docs branches
+    branches: [ '3.0.0.mb', '3.3.0.mb', '4.0.0.mb' ]
+    start_path: mobile/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Seekwell docs branches
+    branches: [ 'seekwell' ]
+    start_path: seekwell/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Spotter docs branch
+    branches: ['1.0.0.cp']
+    start_path: spotter/
+  - url: git@github.com:thoughtspot/visual-embed-sdk.git
+    branches: ['7.1.1-sw-docs', '7.2-sw-docs']
+    start_path: docs/software
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
+ui:
+  bundle:
+    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ui-bundle/ui2-bundle.zip
+  supplemental_files:
+  - path: .nojekyll
+  - path: ui.yml
+    contents: "static_files: [ .nojekyll ]"
+    snapshot: true
+asciidoc:
+  attributes:
+    software: true
+    cloud: false
+    page-company: ThoughtSpot
+    seekwell: SeekWell
+    latest-release-date: <span class="badge badge-early-access">April 2025</span></h1>
+    latest: 10.3.0.cl
+    support-url: https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^]
+    cl-subscription-agreement: https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[subscription agreement^]
+    tabs: tabs
+  extensions:
+    - '@asciidoctor/tabs'
+output:
+  clean: true
+  dir: build/
+runtime:
+  fetch: true
+  log:
+    level: error
