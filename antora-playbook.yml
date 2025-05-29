@@ -12,7 +12,7 @@ content:
     branches: ['9.8.0.sw', '10.1.0.sw']
     start_path: software/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['10.9.0.cl', '10.8.0.cl', '10.6.0.cl', '10.3.0.cl']
+    branches: ['10.10.0.cl', '10.9.0.cl', '10.8.0.cl', '10.6.0.cl']
     start_path: cloud/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Mobile docs branches
@@ -22,10 +22,6 @@ content:
     # Seekwell docs branches
     branches: [ 'seekwell' ]
     start_path: seekwell/
-  - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    # Spotter docs branch
-    branches: ['1.0.0.cp']
-    start_path: spotter/
   - url: git@github.com:thoughtspot/visual-embed-sdk.git
     branches: ['7.1.1-sw-docs', '7.2-sw-docs']
     start_path: docs/software
