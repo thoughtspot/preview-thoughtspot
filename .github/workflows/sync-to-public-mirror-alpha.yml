@@ -1,0 +1,41 @@
+name: Sync Repository to Public Mirror
+
+# Workflow-level concurrency control - prevents multiple instances of this workflow
+concurrency:
+  group: sync-public-mirror-${{ github.repository }}
+  cancel-in-progress: false  # Queue instead of canceling to ensure all changes are synced
+
+on:
+  pull_request:
+    types: [closed]
+    # No branches filter means it will trigger for ALL branches
+  repository_dispatch:
+    types: [sync-public-mirror, sync-after-workflow-deployment] # Custom event from fork PR handler
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync all branches'
+        required: false
+        default: 'true'
+        type: boolean
+      public_repo_name:
+        description: 'Public repository name (leave empty to auto-derive by removing "-private")'
+        required: false
+        type: string
+
+jobs:
+  call-sync-workflow:
+    # Only run this job when the PR was merged, not just closed, OR when manually triggered, OR via repository_dispatch
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+    uses: thoughtspot/workflows/.github/workflows/sync-to-public-mirror.yml@main
+    with:
+      force_sync: ${{ github.event.inputs.force_sync == 'true' || github.event_name == 'repository_dispatch' }}
+      public_repo_name: ${{ github.event.inputs.public_repo_name || github.event.client_payload.public_repo_name || '' }}
+      # Enhanced context for better logging and traceability
+      trigger_type: ${{ github.event_name }}
+      pr_number: ${{ github.event.pull_request.number || github.event.client_payload.pr_number || '' }}
+      merged_branch: ${{ github.event.pull_request.head.ref || github.event.client_payload.branch || '' }}
+      merge_commit_sha: ${{ github.event.pull_request.merge_commit_sha || github.event.client_payload.commit_sha || github.sha }}
+    secrets:
+      SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+

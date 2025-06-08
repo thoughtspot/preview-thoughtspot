@@ -55,6 +55,9 @@ jobs:
           CURRENT_BRANCH=$(git branch --show-current)
           echo "Current branch: $CURRENT_BRANCH"
           
+          # Initialize tracking for successful removals
+          echo "" > successful_removals.txt
+          
           # Process each branch from the file
           while read branch; do
             # Trim whitespace from branch name
@@ -95,6 +98,8 @@ jobs:
             # Check if we're doing a dry run
             if [ "$DRY_RUN" = "true" ]; then
               echo "DRY RUN: Would remove $WORKFLOW_PATH from branch $branch"
+              # Track this as a "would be successful" removal for dry run reporting
+              echo "$branch" >> successful_removals.txt
               continue
             fi
             
@@ -115,11 +120,70 @@ jobs:
             
             # Commit and push changes
             git add -A
-            git commit -m "Remove workflow file from branch $branch" || echo "No changes to commit for $branch"
-            git push origin "$branch" || echo "Failed to push changes to $branch"
+            if git commit -m "Remove workflow file from branch $branch"; then
+              if git push origin "$branch"; then
+                echo "Successfully removed workflow from $branch"
+                # Track successful removal
+                echo "$branch" >> successful_removals.txt
+              else
+                echo "Failed to push changes to $branch"
+              fi
+            else
+              echo "No changes to commit for $branch"
+            fi
             
-            echo "Successfully removed workflow from $branch"
           done < all_branches.txt
           
           # Return to original branch
           git checkout "$CURRENT_BRANCH"
+
+      - name: Trigger sync workflow if changes were made
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.WORKFLOW_AUTOMATION }}
+          script: |
+            const fs = require('fs');
+            
+            // Read successful removals
+            let successfulBranches = [];
+            try {
+              const content = fs.readFileSync('successful_removals.txt', 'utf8');
+              successfulBranches = content.split('\n').filter(branch => branch.trim().length > 0);
+            } catch (error) {
+              console.log('No successful removals file found or error reading it');
+              return;
+            }
+            
+            if (successfulBranches.length === 0) {
+              console.log('No successful removals found. Skipping sync trigger.');
+              return;
+            }
+            
+            const isDryRun = '${{ github.event.inputs.dry_run }}' === 'true';
+            
+            if (isDryRun) {
+              console.log(`DRY RUN: Would trigger sync for ${successfulBranches.length} branches:`, successfulBranches);
+              console.log('Skipping actual sync trigger due to dry run mode.');
+              return;
+            }
+            
+            console.log(`Triggering sync for ${successfulBranches.length} successfully modified branches:`, successfulBranches);
+            
+            // Trigger the repository dispatch event
+            const response = await github.rest.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event_type: 'sync-after-workflow-deployment',
+              client_payload: {
+                workflow_type: 'remove',
+                workflow_path: '${{ github.event.inputs.workflow_path }}',
+                modified_branches: successfulBranches,
+                trigger_source: 'workflow-deployment',
+                run_id: '${{ github.run_id }}',
+                run_number: '${{ github.run_number }}'
+              }
+            });
+            
+            console.log('Repository dispatch event created successfully');
+            console.log('Event type: sync-after-workflow-deployment');
+            console.log('Modified branches:', successfulBranches.join(', '));
