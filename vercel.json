@@ -18,6 +18,18 @@
       "destination": "/seekwell/latest/",
       "statusCode": 301 },
     {
+      "source": "/cloud/10.10.0.cl",
+      "destination": "/cloud/10.10.0.cl/",
+      "statusCode": 301 },
+    {
+      "source": "/cloud/10.9.0.cl",
+      "destination": "/cloud/10.9.0.cl/",
+      "statusCode": 301 },
+    {
+      "source": "/cloud/10.8.0.cl",
+      "destination": "/cloud/10.8.0.cl/",
+      "statusCode": 301 },
+    {
       "source": "/cloud/9.10.0.cl",
       "destination": "/cloud/9.10.0.cl/",
       "statusCode": 301 },
