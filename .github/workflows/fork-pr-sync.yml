@@ -1,8 +1,8 @@
 name: Handle Fork PR Sync
 
-# Concurrency control for fork PR handling
+# Branch-level concurrency control for fork PR handling
 concurrency:
-  group: fork-pr-sync-${{ github.repository }}
+  group: fork-pr-sync-${{ github.repository }}-${{ github.event.pull_request.base.ref }}
   cancel-in-progress: false
 
 on:
@@ -19,10 +19,12 @@ jobs:
         run: |
           echo "Fork PR merged from: ${{ github.event.pull_request.head.repo.full_name }}"
           echo "Target branch: ${{ github.event.pull_request.base.ref }}"
+          echo "Source branch: ${{ github.event.pull_request.head.ref }}"
           echo "PR number: ${{ github.event.pull_request.number }}"
           echo "PR title: ${{ github.event.pull_request.title }}"
+          echo "Merge commit SHA: ${{ github.event.pull_request.merge_commit_sha }}"
 
-      - name: Trigger Sync Workflow
+      - name: Trigger Optimized Sync Workflow
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -35,10 +37,15 @@ jobs:
                 branch: context.payload.pull_request.base.ref,
                 pr_number: context.payload.pull_request.number,
                 source_repo: context.payload.pull_request.head.repo.full_name,
-                trigger_source: 'fork-pr'
+                merge_commit_sha: context.payload.pull_request.merge_commit_sha,
+                trigger_source: 'fork-pr',
+                // Optimization: Only sync the target branch for fork PRs
+                target_branches: context.payload.pull_request.base.ref,
+                force_sync: false
               }
             });
             
             console.log('Repository dispatch event created successfully');
             console.log('Event type: sync-public-mirror');
             console.log('Target branch:', context.payload.pull_request.base.ref);
+            console.log('Optimization: Syncing only target branch instead of all branches');
