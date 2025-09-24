@@ -25,9 +25,9 @@ content:
   - url: git@github.com:thoughtspot/visual-embed-sdk.git
     branches: ['7.1.1-sw-docs', '7.2-sw-docs']
     start_path: docs/software
-# urls:
-#  latest_version_segment_strategy: redirect:to
-# latest_version_segment: latest
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
 ui:
   bundle:
     # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
