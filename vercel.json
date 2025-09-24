@@ -6,10 +6,6 @@
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
-      "source": "/cloud/latest/:path*",
-      "destination": "/cloud/10.13.0.cl/:path*",
-      "statusCode": 301 },
-    {
       "source": "/mobile/latest",
       "destination": "/mobile/latest/",
       "statusCode": 301 },
@@ -31,7 +27,7 @@
       "statusCode": 301 },
     {
       "source": "/cloud/10.11.0.cl",
-      "destination": "/cloud/10.11.0.cl/",
+      "destination": "/cloud/10.101.0.cl/",
       "statusCode": 301 },
     {
       "source": "/cloud/10.10.0.cl",
