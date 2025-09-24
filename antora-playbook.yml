@@ -12,7 +12,7 @@ content:
     branches: ['10.1.0.sw', '10.10.0.sw']
     start_path: software/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['10.13.0.cl', '10.12.0.cl', '10.11.0.cl']
+    branches: ['10.13.0.cl', '10.12.0.cl']
     start_path: cloud/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Mobile docs branches
