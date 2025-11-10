@@ -12,7 +12,7 @@ content:
     branches: ['10.1.0.sw', '10.10.0.sw']
     start_path: software/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['10.12.0.cl']
+    branches: ['10.15.0.cl', '10.14.0.cl', '10.13.0.cl', '10.12.0.cl']
     start_path: cloud/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Mobile docs branches
@@ -25,9 +25,9 @@ content:
   - url: git@github.com:thoughtspot/visual-embed-sdk.git
     branches: ['7.1.1-sw-docs', '7.2-sw-docs']
     start_path: docs/software
-# urls:
-#  latest_version_segment_strategy: redirect:to
-#  latest_version_segment: latest
+urls:
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
 ui:
   bundle:
     # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
