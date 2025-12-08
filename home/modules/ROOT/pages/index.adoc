@@ -113,7 +113,7 @@ td {
     <p>Build interactive data apps with a developer-friendly platform.</p></span>
     </a></div>
       <div class="box-button"><a href="https://preview-thoughtspot.vercel.app/mobile/latest" class="panel-2">
-      <span><img src="https://docs.thoughtspot.com/home/_images/mobile_v4.png" id="mobile-icon">
+      <span><img src="https://docs.thoughtspot.com/home/_images/mobile_v5.png" id="mobile-icon">
     <h2>
       Mobile
     </h2>
