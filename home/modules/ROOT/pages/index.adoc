@@ -92,7 +92,7 @@ td {
 ++++
 <div class="box-button-columns">
     <div class="box-button"><a href="https://preview-thoughtspot.vercel.app/cloud/latest" class="panel-2">
-      <span><img src="https://docs.thoughtspot.com/home/_images/cloud_v2.png" id="cloud-icon">
+      <span><img src="https://docs.thoughtspot.com/home/_images/cloud_v3.png" id="cloud-icon">
     <h2>
       Cloud
     </h2>
@@ -113,7 +113,7 @@ td {
     <p>Build interactive data apps with a developer-friendly platform.</p></span>
     </a></div>
       <div class="box-button"><a href="https://preview-thoughtspot.vercel.app/mobile/latest" class="panel-2">
-      <span><img src="https://docs.thoughtspot.com/home/_images/mobile_v2.png" id="mobile-icon">
+      <span><img src="https://docs.thoughtspot.com/home/_images/mobile_v3.png" id="mobile-icon">
     <h2>
       Mobile
     </h2>
