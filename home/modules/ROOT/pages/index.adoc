@@ -99,7 +99,7 @@ td {
     <p>Our fully managed SaaS solution.</p></span>
     </a></div>
     <div class="box-button"><a href = "https://preview-thoughtspot.vercel.app/software/latest" class = "panel-2">
-    <img src="https://docs.thoughtspot.com/home/_images/software_v2.png" id="software-icon">
+    <img src="https://docs.thoughtspot.com/home/_images/software_v3.png" id="software-icon">
     <h2>
       Software
     </h2>
