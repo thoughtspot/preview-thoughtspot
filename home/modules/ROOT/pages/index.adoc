@@ -108,7 +108,7 @@ td {
   <div class="box-button"><a href="https://developers.thoughtspot.com/docs/" class="panel-2">
       <span><img src="https://docs.thoughtspot.com/home/_images/developer_v3.png" id="developer-icon">
     <h2>
-      Developer
+      Embedded
     </h2>
     <p>Build interactive data apps with a developer-friendly platform.</p></span>
     </a></div>
