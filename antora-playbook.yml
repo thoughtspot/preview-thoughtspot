@@ -12,7 +12,7 @@ content:
     branches: ['10.1.0.sw', '10.10.0.sw']
     start_path: software/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['26.4.0.cl', '26.3.1.cl', '26.3.0.cl', '26.2.0.cl']
+    branches: ['26.5.0.cl', '26.4.0.cl', '26.3.1.cl', '26.3.0.cl']
     start_path: cloud/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Mobile docs branches
@@ -20,7 +20,7 @@ content:
     start_path: mobile/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Seekwell docs branches
-    branches: [ 'seekwell' ]
+    branches: ['seekwell']
     start_path: seekwell/
   - url: git@github.com:thoughtspot/visual-embed-sdk.git
     branches: ['7.1.1-sw-docs', '7.2-sw-docs']
