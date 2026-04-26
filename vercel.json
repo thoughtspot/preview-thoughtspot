@@ -10,6 +10,10 @@
       "destination": "/mobile/latest/",
       "statusCode": 301 },
     {
+      "source": "/agentspot/latest",
+      "destination": "/agentspot/latest/",
+      "statusCode": 301 },    
+    {
       "source": "/spotter/latest",
       "destination": "/spotter/latest/",
       "statusCode": 301 },
