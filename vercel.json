@@ -11,11 +11,11 @@
       "statusCode": 301 },
     {
       "source": "/agentspot",
-      "destination": "/agentspot/latest/",
+      "destination": "/agentspot/",
       "statusCode": 301 },
     {
       "source": "/agentspot/latest",
-      "destination": "/agentspot/latest/",
+      "destination": "/agentspot/",
       "statusCode": 301 },
     {
       "source": "/spotter/latest",
