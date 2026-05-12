@@ -26,84 +26,16 @@
       "destination": "/seekwell/latest/",
       "statusCode": 301 },
     {
-      "source": "/cloud/26.3.0.cl",
-      "destination": "/cloud/26.3.0.cl/",
+      "source": "/cloud/26.6.0.cl",
+      "destination": "/cloud/26.6.0.cl/",
       "statusCode": 301 },
     {
-      "source": "/cloud/26.2.0.cl",
-      "destination": "/cloud/26.2.0.cl/",
+      "source": "/cloud/26.5.0.cl",
+      "destination": "/cloud/26.5.0.cl/",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.15.0.cl",
-      "destination": "/cloud/10.15.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.14.0.cl",
-      "destination": "/cloud/10.14.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.13.0.cl",
-      "destination": "/cloud/10.13.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.12.0.cl",
-      "destination": "/cloud/10.12.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.11.0.cl",
-      "destination": "/cloud/10.101.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.10.0.cl",
-      "destination": "/cloud/10.10.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.9.0.cl",
-      "destination": "/cloud/10.9.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.8.0.cl",
-      "destination": "/cloud/10.8.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/9.10.0.cl",
-      "destination": "/cloud/9.10.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/9.8.0.cl",
-      "destination": "/cloud/9.8.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/9.7.0.cl",
-      "destination": "/cloud/9.7.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/9.6.0.cl",
-      "destination": "/cloud/9.6.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/9.5.0.cl",
-      "destination": "/cloud/9.5.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.1.0.cl",
-      "destination": "/cloud/10.1.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.3.0.cl",
-      "destination": "/cloud/10.3.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.4.0.cl",
-      "destination": "/cloud/10.4.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.5.0.cl",
-      "destination": "/cloud/10.5.0.cl/",
-      "statusCode": 301 },
-    {
-      "source": "/cloud/10.6.0.cl",
-      "destination": "/cloud/10.6.0.cl/",
+      "source": "/cloud/26.4.0.cl",
+      "destination": "/cloud/26.4.0.cl/",
       "statusCode": 301 },
     {
       "source": "/software/latest",
