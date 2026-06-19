@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "@asciidoctor/tabs": "^1.0.0-beta.6",
-    "gulp": "^5.0.0"
+    "gulp": "^5.0.1"
   }
 }
