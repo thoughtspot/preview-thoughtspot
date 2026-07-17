@@ -1,7 +1,7 @@
 site:
   title: ThoughtSpot Documentation Preview Site
   url: https://preview-thoughtspot.vercel.app
-  start_page: home::index.adoc
+  start_page: 26.8.0.cl@cloud::index.adoc
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
