@@ -55,6 +55,9 @@ asciidoc:
     tsa-docs: ''
   extensions:
     - '@asciidoctor/tabs'
+antora:
+  extensions:
+  - require: ./extensions/generate-markdown-pages.js
 output:
   clean: true
   dir: build/
