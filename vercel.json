@@ -100,7 +100,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src * 'unsafe-eval' 'unsafe-inline' data: filesystem: about: blob:;"
+          "value": "default-src * 'unsafe-eval' 'unsafe-inline' data: filesystem: about: blob:; frame-ancestors 'self' https://chatgpt.com https://claude.ai https://*.chatgpt.com https://*.claude.ai;"
         }
       ]
     }
