@@ -9,6 +9,9 @@ const { gfm } = require('turndown-plugin-gfm')
 // shouldn't appear in the generated Markdown
 const CHROME_SELECTOR = 'nav.pagination, .copy-page, aside.toc, .source-toolbox, a.anchor'
 
+// these components have too many pages for markdown generation to fit in memory during the build
+const EXCLUDED_COMPONENTS = ['software', 'seekwell']
+
 function toMarkdown (html, turndownService) {
   const $ = cheerio.load(html)
   const article = $('article.doc').first()
@@ -21,7 +24,7 @@ module.exports.register = function () {
   const turndownService = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' }).use(gfm)
 
   this.on('beforePublish', ({ contentCatalog, siteCatalog }) => {
-    contentCatalog.getPages((page) => page.out).forEach((page) => {
+    contentCatalog.getPages((page) => page.out && !EXCLUDED_COMPONENTS.includes(page.src.component)).forEach((page) => {
       const markdown = toMarkdown(page.contents.toString(), turndownService)
       if (markdown === undefined) return
       const out = {
