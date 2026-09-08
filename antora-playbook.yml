@@ -1,7 +1,7 @@
 site:
   title: ThoughtSpot Documentation Preview Site
   url: https://preview-thoughtspot.vercel.app
-  start_page: 26.9.0.cl@cloud::index.adoc
+  start_page: 26.10.0.cl@cloud::index.adoc
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
@@ -12,7 +12,7 @@ content:
     branches: ['10.10.0.sw', '26.3.0.sw']
     start_path: software/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['26.9.0.cl', '26.8.0.cl', '26.7.0.cl']
+    branches: ['26.10.0.cl', '26.9.0.cl', '26.8.0.cl']
     start_path: cloud/
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
     # Mobile docs branches
