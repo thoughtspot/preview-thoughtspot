@@ -2,7 +2,7 @@
   "private": "true",
   "scripts": {
     "plain-install": "npm i --cache=.cache/npm --no-optional",
-    "build": "antora antora-playbook.yml --stacktrace --fetch --clean"
+    "build": "antora antora-playbook.yml --stacktrace --fetch --clean && node build-markdown.js"
   },
   "devDependencies": {
     "antora": "3.1.7"
