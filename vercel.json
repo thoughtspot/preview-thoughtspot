@@ -26,10 +26,6 @@
       "destination": "/seekwell/latest/",
       "statusCode": 301 },
     {
-      "source": "/cloud/26.11.0.cl",
-      "destination": "/cloud/26.11.0.cl/",
-      "statusCode": 301 },
-    {
       "source": "/cloud/26.9.0.cl",
       "destination": "/cloud/26.9.0.cl/",
       "statusCode": 301 },
@@ -52,10 +48,6 @@
     {
       "source": "/software/latest",
       "destination": "/software/latest/",
-      "statusCode": 301 },
-    {
-      "source": "/software/26.3.0.sw",
-      "destination": "/software/26.3.0.sw/",
       "statusCode": 301 },
     {
       "source": "/software/10.1.0.sw",
