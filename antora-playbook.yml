@@ -51,6 +51,8 @@ asciidoc:
 output:
   clean: true
   dir: build/
+git:
+  read_concurrency: 1
 runtime:
   fetch: true
   log:
