@@ -22,13 +22,6 @@ content:
     # AgentSpot docs branches
     branches: ['1.0.0.as']
     start_path: agentspot/
-  - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    # Seekwell docs branches
-    branches: ['seekwell']
-    start_path: seekwell/
-  - url: git@github.com:thoughtspot/visual-embed-sdk.git
-    branches: ['7.1.1-sw-docs', '7.2-sw-docs']
-    start_path: docs/software
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: latest
